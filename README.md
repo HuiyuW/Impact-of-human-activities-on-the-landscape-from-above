@@ -12,6 +12,7 @@
 - [Copyright](#Copyright)
 
 ## Authors
+* Computer Vision Challenge Group Project
 * Group Number: G24  
 * Group Member: Huiyu Wang, Han Zucheng, Tian Jian, Yan Xu, Zhang Xiaoang  
 
@@ -36,7 +37,7 @@
 3. Choose images in a drop down menu, If users want to test their own images, they must put the images in the folder 'own pictures' in Dataset. Use 'images overview' window you can see the details of the selected images. The software only accepts images in jpg format.  
 4. Click on the eight images on the left to select 2 to 4 pictures to compare. If you accidentally clicked on an image twice or unwanted image is chosen, select the image set again as in step 3 and then click on 'Reset' on the bottom right corner.
 
-5. After the selection is over, click the button 'ready and start'. Now the common parts of the four images will be projected on the same image. This image will pop out, users need to double click a point on the image to get an area to analyze the changes in this area.the common parts will be shown in GUI.(pic1 to pic4). 
+5. After the selection is over, click the button 'ready and start'. Now the common parts of the four images will be projected on the same image. This image will pop out, users need to double click a point on the image to get an area to analyze the changes in this area.the common parts will be shown in GUI. 
 
 6. User can choose 2 images to show highlights. Threshold and other parameters can be given by users. To change the mode quick/slow, you can choose KAZE or SURF method to find the highlights part of the image.
 
@@ -307,20 +308,20 @@ Randomly extract four points from the matching points and calculate the matrix H
 ransac1.m
 --------------------
 
-Function:
-Kick-off Outliers.
-Use RANdom SAmple Consensus to find a fit from X to Y. 
-X is M*n matrix including n points with dim M, Y is N*n;
-The fit, f, and the indices of inliers, are returned.
-RANSACCOEF is a struct with following fields:
-minPtNum,iterNum,thDist,thInlrRatio
-MINPTNUM is the minimum number of points with whom can we find a fit. For line fitting, it's 2. For homography, it's 4.ITERNUM is the number of iteration, THDIST is the inlier distance threshold and ROUND(THINLRRATIO*n) is the inlier number threshold.
-FUNCFINDF is a func handle, f1 = funcFindF(x1,y1)
-x1 is M*n1 and y1 is N*n1, n1 >= ransacCoef.minPtNum
-f1 can be of any type.
-FUNCDIST is a func handle, d = funcDist(f,x1,y1)
-It uses f returned by FUNCFINDF, and return the distance between f and the points, d is 1*n1.
-For line fitting, it should calculate the dist between the line and the points [x1;y1]; for homography, it should project x1 to y2 then calculate the dist between y1 and y2.
+Function:  
+Kick-off Outliers.  
+Use RANdom SAmple Consensus to find a fit from X to Y.   
+X is M*n matrix including n points with dim M, Y is N*n;  
+The fit, f, and the indices of inliers, are returned.  
+RANSACCOEF is a struct with following fields:  
+minPtNum,iterNum,thDist,thInlrRatio  
+MINPTNUM is the minimum number of points with whom can we find a fit. For line fitting, it's 2. For homography, it's 4.ITERNUM is the number of iteration, THDIST is the inlier distance threshold and ROUND(THINLRRATIO*n) is the inlier number threshold.  
+FUNCFINDF is a func handle, f1 = funcFindF(x1,y1)  
+x1 is M*n1 and y1 is N*n1, n1 >= ransacCoef.minPtNum  
+f1 can be of any type.  
+FUNCDIST is a func handle, d = funcDist(f,x1,y1)  
+It uses f returned by FUNCFINDF, and return the distance between f and the points, d is 1*n1.  
+For line fitting, it should calculate the dist between the line and the points [x1;y1]; for homography, it should project x1 to y2 then calculate the dist between y1 and y2.  
 
 
 --------------------
@@ -393,6 +394,10 @@ The user should input whether 'quick', 'middle' or 'slow' to determine the tempo
 ![GUI results](./Reference_Images/GUI_results.jpg)  
 ![GUI_dubai](./Reference_Images/GUI_dubai.jpg)  
 ![GUI_yangtze_river](./Reference_Images/GUI_yangtze_river.jpg)  
+
+
 ## Copyright
 * [1][Computer Vision](https://www.ce.cit.tum.de/ldv/lehre/computer-vision/)
-* [2][tranberg. Determining dominant colors in images using clustering.](https://tberg.dk/post/determining-dominant-colors//)
+* [2][tranberg. Determining dominant colors in images using clustering.](https://tberg.dk/post/determining-dominant-colors//)  
+
+* [Video Link](https://youtu.be/smFU67QdeB8)  
